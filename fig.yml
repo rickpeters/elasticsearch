@@ -1,4 +1,4 @@
-es_1:
+es1:
   image: dockerfile/elasticsearch
   command: /elasticsearch/bin/elasticsearch -Des.config=/data/elasticsearch.yml
   ports:
@@ -6,4 +6,29 @@ es_1:
     - "9300:9300"
   volumes:
     - /var/appdata/es_node_1:/data
+es2:
+  image: dockerfile/elasticsearch
+  command: /elasticsearch/bin/elasticsearch -Des.config=/data/elasticsearch.yml
+  ports:
+    - "9201:9200"
+    - "9301:9300"
+  volumes:
+    - /var/appdata/es_node_2:/data
 
+es3:
+  image: dockerfile/elasticsearch
+  command: /elasticsearch/bin/elasticsearch -Des.config=/data/elasticsearch.yml
+  ports:
+    - "9202:9200"
+    - "9302:9300"
+  volumes:
+    - /var/appdata/es_node_3:/data
+
+es4:
+  image: dockerfile/elasticsearch
+  command: /elasticsearch/bin/elasticsearch -Des.config=/data/elasticsearch.yml
+  ports:
+    - "9203:9200"
+    - "9303:9300"
+  volumes:
+    - /var/appdata/es_node_4:/data

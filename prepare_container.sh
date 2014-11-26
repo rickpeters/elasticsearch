@@ -13,7 +13,9 @@ do
     mkdir $DIRECTORY
   fi
   cd $DIRECTORY
-  if [ ! -f "elasticsearch.yml" ]; then
+  #if [ ! -f "elasticsearch.yml" ]; then
     printf "path:\n logs: /data/log\n data: /data/data" > elasticsearch.yml
-  fi
+    printf "http.cors.allow-origin: "/.*/"\nhttp.cors.enabled: true" >> elasticsearch.yml
+    printf "cluster:\n name: gmwbigdata" >> elasticsearch.yml
+  #fi
 done
